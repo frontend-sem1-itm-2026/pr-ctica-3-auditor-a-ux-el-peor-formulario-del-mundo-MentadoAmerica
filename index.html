@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>El peor formulario del mundo</title>
+
+  <!-- ERROR 1: falta meta viewport para responsive real -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .top-banner {
+      background: #0d6efd;
+      color: white;
+      padding: 8px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .form-box {
+      background: white;
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .tiny-note {
+      font-size: 10px;
+      color: #aaa;
+    }
+
+    .section-title {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* ERROR 2: contraste muy bajo en ayudas */
+    .low-contrast {
+      color: #d3d3d3;
+      font-size: 12px;
+    }
+
+    /* ERROR 3: botón peligroso demasiado parecido al principal */
+    .btn-weird {
+      background: #0d6efd;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    Bienvenido. Este formulario es obligatorio. Si no lo llenas completo, tu solicitud será rechazada sin explicación.
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- ERROR 4: formulario demasiado angosto en escritorio y sin buena jerarquía -->
+      <div class="col-md-5">
+        <div class="form-box">
+          <h1 style="font-size: 20px;">Formulario General Universal de Registro, Inscripción, Solicitud y Validación Inicial</h1>
+          <p class="tiny-note">
+            Llena todos los campos aunque no apliquen. Si no sabes una respuesta, escribe algo aproximado.
+          </p>
+
+          <form>
+            <div class="section-title">Información personal, laboral, escolar y complementaria</div>
+
+            <!-- ERROR 5: sin labels, solo placeholders -->
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Nombre(s)">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Apellido paterno">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Apellido materno">
+            </div>
+
+            <!-- ERROR 6: tipo incorrecto para fecha -->
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Fecha de nacimiento (dd/mm/aaaa)">
+            </div>
+
+            <!-- ERROR 7: pide demasiada información personal sin justificación -->
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="CURP">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="RFC">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Nacionalidad, religión y estado civil">
+            </div>
+
+            <div class="section-title">Datos de contacto</div>
+
+            <!-- ERROR 8: confirmación innecesaria y sin criterio -->
+            <div class="mb-2">
+              <input type="email" class="form-control" placeholder="Correo electrónico">
+            </div>
+
+            <div class="mb-2">
+              <input type="email" class="form-control" placeholder="Confirma tu correo">
+            </div>
+
+            <!-- ERROR 9: input de teléfono como text, sin validación -->
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Teléfono fijo">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Teléfono celular">
+            </div>
+
+            <div class="section-title">Dirección completa</div>
+
+            <!-- ERROR 10: demasiados campos desorganizados -->
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Calle">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Número exterior">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Número interior">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Colonia">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Municipio / Alcaldía / Región / Zona">
+            </div>
+
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Código postal">
+            </div>
+
+            <!-- ERROR 11: select sin opciones útiles -->
+            <div class="mb-2">
+              <select class="form-select">
+                <option selected>Selecciona tu país</option>
+                <option>México</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="section-title">Cuenta</div>
+
+            <!-- ERROR 12: password sin ayuda, confirmación excesiva -->
+            <div class="mb-2">
+              <input type="password" class="form-control" placeholder="Contraseña">
+            </div>
+
+            <div class="mb-2">
+              <input type="password" class="form-control" placeholder="Repite la contraseña">
+            </div>
+
+            <div class="low-contrast mb-2">
+              La contraseña debe tener entre 6 y 32 caracteres, mayúsculas, minúsculas, símbolos, número, jeroglíficos y buena vibra.
+            </div>
+
+            <div class="section-title">Información adicional importante</div>
+
+            <!-- ERROR 13: textarea con requisito absurdo -->
+            <div class="mb-2">
+              <textarea class="form-control" rows="2" placeholder="Describe en al menos 500 palabras por qué deseas registrarte"></textarea>
+            </div>
+
+            <!-- ERROR 14: checkboxes confusos / coercitivos -->
+            <div class="form-check mb-1">
+              <input class="form-check-input" type="checkbox" id="c1">
+              <label class="form-check-label" for="c1">
+                Acepto términos y condiciones que no he leído.
+              </label>
+            </div>
+
+            <div class="form-check mb-1">
+              <input class="form-check-input" type="checkbox" id="c2">
+              <label class="form-check-label" for="c2">
+                Acepto recibir promociones, llamadas, correos y cualquier otro contacto no solicitado.
+              </label>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="c3">
+              <label class="form-check-label" for="c3">
+                Confirmo que toda la información es correcta, aunque no lo sé.
+              </label>
+            </div>
+
+            <!-- ERROR 15: acciones confusas y peligrosas -->
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-weird">Cancelar</button>
+              <a href="#" class="btn btn-danger">Borrar todo</a>
+            </div>
+
+            <p class="tiny-note mt-3">
+              Si ocurre un error, vuelve a intentarlo. No se mostrarán detalles.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Panel lateral para dar contexto al alumno sin revelar respuestas -->
+      <div class="col-md-7">
+        <div class="p-4">
+          <h2 class="h4">Actividad: Auditoría UX</h2>
+          <p>
+            Este formulario está diseñado para que detectes problemas de:
+          </p>
+          <ul>
+            <li>UX (claridad, flujo, acciones)</li>
+            <li>Accesibilidad (labels, contraste, navegación)</li>
+            <li>Validación (tipos, required, feedback)</li>
+            <li>Jerarquía visual / Layout (orden, agrupación)</li>
+            <li>Responsive (móvil vs escritorio)</li>
+            <li>Contenido (texto confuso, requisitos absurdos)</li>
+          </ul>
+
+          <div class="alert alert-warning">
+            No debes corregir el formulario. Solo auditarlo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
